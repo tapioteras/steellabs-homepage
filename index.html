@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steellabs | One-Man Powerhouse</title>
+  <style>
+    :root {
+      --bg: #090b12;
+      --panel: #121726;
+      --text: #e7ecff;
+      --muted: #9aa7ce;
+      --accent: #00e5ff;
+      --accent-2: #ff00e5;
+      --border: #273255;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% -10%, #1a1f3f 0%, transparent 45%),
+        radial-gradient(circle at 90% 0%, #2f0b34 0%, transparent 35%),
+        var(--bg);
+      line-height: 1.6;
+    }
+
+    .container { width: min(1050px, 92%); margin: 0 auto; }
+    .hero { padding: 5rem 0 2.5rem; }
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.15;
+      text-shadow: 0 0 18px rgba(0, 229, 255, 0.22);
+    }
+    .tagline { color: var(--muted); font-size: 1.1rem; max-width: 720px; margin-top: 1rem; }
+    .badge {
+      display: inline-block;
+      margin-bottom: 1rem;
+      padding: 0.35rem 0.75rem;
+      border: 1px solid var(--accent);
+      border-radius: 999px;
+      color: var(--accent);
+      font-size: 0.84rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      margin: 1.75rem 0 0;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1rem;
+    }
+    .card h3 { margin: 0 0 0.45rem; color: var(--accent); font-size: 1rem; }
+    .card p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+    section { padding: 1.25rem 0; }
+    h2 { margin: 0 0 0.85rem; font-size: 1.2rem; color: #d4dcff; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    a:hover { color: var(--accent-2); }
+
+    .projects ul, .links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: .5rem;
+    }
+    .projects li, .links li {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: .7rem .85rem;
+    }
+
+    footer {
+      margin-top: 2rem;
+      padding: 1.5rem 0 2.5rem;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+    }
+  </style>
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <span class="badge">Steellabs consultancy</span>
+      <h1>One-man powerhouse for modern, scalable web &amp; mobile services</h1>
+      <p class="tagline">
+        I build production-grade digital services end-to-end: architecture, implementation, analytics, monitoring, and practical AI adoption for development teams and organizations.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Scalable product engineering</h3>
+          <p>Design and implementation for modern web and mobile platforms with maintainable architecture.</p>
+        </article>
+        <article class="card">
+          <h3>Value creation through analytics</h3>
+          <p>Instrument product lifecycle metrics so decisions can be based on data, not assumptions.</p>
+        </article>
+        <article class="card">
+          <h3>Monitoring for production maintenance</h3>
+          <p>Observability systems covering health signals, alerts, and operational reliability.</p>
+        </article>
+        <article class="card">
+          <h3>Practical AI advisory</h3>
+          <p>Hands-on guidance on implementing AI into existing teams, workflows, and organization-level strategy.</p>
+        </article>
+      </div>
+    </header>
+
+    <section class="projects">
+      <h2>Side projects</h2>
+      <ul>
+        <li><a href="https://recipes.steellabs.io/" target="_blank" rel="noopener noreferrer">recipes.steellabs.io</a></li>
+        <li><a href="https://steel-balance.steellabs.io/" target="_blank" rel="noopener noreferrer">steel-balance.steellabs.io</a></li>
+        <li><a href="https://working-hours.steellabs.io/" target="_blank" rel="noopener noreferrer">working-hours.steellabs.io</a></li>
+      </ul>
+    </section>
+
+    <section class="links">
+      <h2>Public LinkedIn feed</h2>
+      <div class="card">
+        <p>
+          Follow the public activity feed on LinkedIn:
+          <a href="https://www.linkedin.com/in/tapioteras/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tapioteras</a>
+        </p>
+        <div
+          class="badge-base LI-profile-badge"
+          data-locale="en_US"
+          data-size="large"
+          data-theme="dark"
+          data-type="VERTICAL"
+          data-vanity="tapioteras"
+          data-version="v1"
+        >
+          <a class="badge-base__link LI-simple-link" href="https://www.linkedin.com/in/tapioteras/?trk=profile-badge">
+            Tapio Teräs
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="links">
+      <h2>GitHub</h2>
+      <ul>
+        <li><a href="https://github.com/tapioteras" target="_blank" rel="noopener noreferrer">github.com/tapioteras</a></li>
+      </ul>
+    </section>
+
+    <section class="links">
+      <h2>Contact</h2>
+      <ul>
+        <li><a href="mailto:sales@steellabs.io">sales@steellabs.io</a></li>
+      </ul>
+    </section>
+
+    <footer>
+      Steellabs — modern engineering, analytics, observability, and practical AI advisory.
+    </footer>
+  </main>
+</body>
+</html>
