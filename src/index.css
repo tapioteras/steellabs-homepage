@@ -132,8 +132,9 @@ a {
 
 .site-nav {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: clamp(1rem, 2vw, 2rem);
+  gap: clamp(0.75rem, 2vw, 2rem);
   font-size: 0.85rem;
   letter-spacing: 0.03em;
 }

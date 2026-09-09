@@ -132,7 +132,8 @@ export const content: Record<Locale, Content> = {
         {
           name: 'recipes.steellabs.io',
           url: 'https://recipes.steellabs.io/',
-          description: 'Recipe app — from idea to build, AI-assisted.',
+          description:
+            'Recipe app for importing recipes from any source and scaling them (e.g. to 1.5x) — originally hand-coded, later refined with AI.',
         },
         {
           name: 'working-hours.steellabs.io',
@@ -142,7 +143,7 @@ export const content: Record<Locale, Content> = {
         {
           name: 'steel-balance.steellabs.io',
           url: 'https://steel-balance.steellabs.io/',
-          description: 'Financial balance tracking tool, AI-built.',
+          description: 'A fast-paced balance game, AI-built.',
         },
       ],
     },
@@ -221,7 +222,8 @@ export const content: Record<Locale, Content> = {
         {
           name: 'recipes.steellabs.io',
           url: 'https://recipes.steellabs.io/',
-          description: 'Reseptisovellus — ideasta toteutukseen AI-avusteisesti.',
+          description:
+            'Reseptisovellus reseptien tuontiin mistä tahansa ja niiden kertomiseen (esim. 1,5-kertaiseksi) — alun perin käsin koodattu, myöhemmin ehostettu AI:n avulla.',
         },
         {
           name: 'working-hours.steellabs.io',
@@ -231,7 +233,7 @@ export const content: Record<Locale, Content> = {
         {
           name: 'steel-balance.steellabs.io',
           url: 'https://steel-balance.steellabs.io/',
-          description: 'Talouden/tasapainon seurantatyökalu, AI-kehitetty.',
+          description: 'Nopeatempoinen tasapainopeli, AI-kehitetty.',
         },
       ],
     },
