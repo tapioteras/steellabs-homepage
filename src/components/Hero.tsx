@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext'
+import LaptopGlow from './LaptopGlow'
 
 export default function Hero() {
   const { t } = useLanguage()
@@ -19,14 +20,15 @@ export default function Hero() {
           </span>
         </h1>
         <p className="hero-lede">{t.hero.lede}</p>
-        <div className="hero-actions">
-          <a className="btn btn-primary" href="mailto:info@steellabs.io">
-            info@steellabs.io
-          </a>
-          <a className="btn btn-ghost" href="#referenssit">
-            {t.hero.ctaSecondary}
-          </a>
-        </div>
+      </div>
+      <LaptopGlow />
+      <div className="hero-actions">
+        <a className="btn btn-primary" href="mailto:info@steellabs.io">
+          info@steellabs.io
+        </a>
+        <a className="btn btn-ghost" href="#referenssit">
+          {t.hero.ctaSecondary}
+        </a>
       </div>
     </section>
   )

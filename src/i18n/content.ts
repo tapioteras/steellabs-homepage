@@ -239,7 +239,7 @@ export const content: Record<Locale, Content> = {
     },
     footer: {
       eyebrow: '// yhteys',
-      heading: 'Rakennetaanko seuraava demottava tulos?',
+      heading: 'Rakennetaanko seuraava ratkaisu yhdessä?',
       linkedinLabel: 'LinkedIn ↗',
       tagline: 'Steel Labs — AI-jalkautus, devtiimien johtaminen ja arvoa tuottava ohjelmistokehitys.',
       copyrightSuffix: 'Steel Labs. Kaikki oikeudet pidätetään.',

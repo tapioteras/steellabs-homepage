@@ -221,8 +221,27 @@ a {
   padding: clamp(4rem, 12vh, 8rem) clamp(1.25rem, 6vw, 4rem) clamp(3rem, 8vh, 5rem);
   overflow: hidden;
   min-height: 78vh;
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    'copy'
+    'art'
+    'actions';
+  align-content: center;
+}
+
+/* Desktop: copy + buttons on the left, laptop centred on the right */
+@media (min-width: 960px) {
+  .hero {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    grid-template-rows: 1fr auto auto 1fr;
+    grid-template-areas:
+      '.       art'
+      'copy    art'
+      'actions art'
+      '.       art';
+    column-gap: clamp(1.5rem, 3vw, 3rem);
+  }
 }
 
 .hero-grid {
@@ -240,9 +259,85 @@ a {
 }
 
 .hero-content {
+  grid-area: copy;
   position: relative;
   z-index: 1;
   max-width: 840px;
+}
+
+/* ---------- Hero illustration (LaptopGlow) ---------- */
+
+.hero-art {
+  grid-area: art;
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  justify-self: center;
+  width: 100%;
+  max-width: 640px;
+  margin-top: 2.5rem;
+  pointer-events: none;
+  /* closest-side reaches full transparency exactly at each edge midpoint, so
+     the glow fades to nothing before any edge or corner of the box */
+  mask-image: radial-gradient(
+    closest-side,
+    black 0%,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 75%,
+    rgba(0, 0, 0, 0.2) 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: radial-gradient(
+    closest-side,
+    black 0%,
+    black 60%,
+    rgba(0, 0, 0, 0.6) 75%,
+    rgba(0, 0, 0, 0.2) 90%,
+    transparent 100%
+  );
+}
+
+.hero-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+@media (min-width: 960px) {
+  .hero-art {
+    max-width: 780px;
+    margin-top: 0;
+  }
+}
+
+@keyframes lg-flick-mag {
+  0% { opacity: 0.85; } 7% { opacity: 0.35; } 9% { opacity: 0.9; } 22% { opacity: 0.7; }
+  24% { opacity: 1; } 41% { opacity: 0.55; } 43% { opacity: 0.95; } 60% { opacity: 0.8; }
+  61% { opacity: 0.25; } 63% { opacity: 0.9; } 80% { opacity: 0.65; } 100% { opacity: 0.85; }
+}
+
+@keyframes lg-flick-cyan {
+  0% { opacity: 0.5; } 12% { opacity: 0.9; } 14% { opacity: 0.4; } 30% { opacity: 0.75; }
+  47% { opacity: 1; } 49% { opacity: 0.3; } 52% { opacity: 0.85; } 70% { opacity: 0.6; }
+  86% { opacity: 0.95; } 88% { opacity: 0.45; } 100% { opacity: 0.5; }
+}
+
+@keyframes lg-flick-amber {
+  0%, 30% { opacity: 0; } 31% { opacity: 0.7; } 33% { opacity: 0; } 72% { opacity: 0; }
+  73% { opacity: 0.5; } 74% { opacity: 0.1; } 76% { opacity: 0.55; } 78%, 100% { opacity: 0; }
+}
+
+.lg-mag { animation: lg-flick-mag 2.7s steps(1, end) infinite; }
+.lg-cyan { animation: lg-flick-cyan 3.3s steps(1, end) infinite; }
+.lg-amber { animation: lg-flick-amber 5.9s steps(1, end) infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lg-mag,
+  .lg-cyan,
+  .lg-amber {
+    animation: none;
+  }
 }
 
 .hero-kicker {
@@ -319,6 +414,9 @@ a {
 }
 
 .hero-actions {
+  grid-area: actions;
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 1rem;
   margin-top: 2.5rem;
