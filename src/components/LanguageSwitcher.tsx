@@ -1,21 +1,22 @@
 import { LOCALES, LOCALE_LABELS } from '../i18n/content'
-import { useLanguage } from '../i18n/LanguageContext'
+import { localeHref, useLanguage } from '../i18n/LanguageContext'
 
 export default function LanguageSwitcher() {
-  const { locale, setLocale } = useLanguage()
+  const { locale } = useLanguage()
 
   return (
     <div className="lang-switcher" role="group" aria-label="Language">
       {LOCALES.map((code, index) => (
         <span key={code} className="lang-switcher-item">
-          <button
-            type="button"
+          <a
+            href={localeHref(locale, code)}
+            hrefLang={code}
+            lang={code}
             className={code === locale ? 'lang-switcher-active' : ''}
-            aria-current={code === locale}
-            onClick={() => setLocale(code)}
+            aria-current={code === locale ? 'page' : undefined}
           >
             {LOCALE_LABELS[code]}
-          </button>
+          </a>
           {index < LOCALES.length - 1 && <span className="lang-switcher-sep">/</span>}
         </span>
       ))}

@@ -1,43 +1,33 @@
-import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from 'react'
-import { content, LOCALES, type Content, type Locale } from './content'
+import { createContext, useContext, useMemo, type ReactNode } from 'react'
+import { content, type Content, type Locale } from './content'
 
-const STORAGE_KEY = 'steellabs-lang'
+// Each language has its own URL (fi at the site root, en under /en/), so the
+// locale is fixed per page: it is passed in from main.tsx / entry-server.tsx,
+// and switching language is a normal link to the other page.
 
 type LanguageContextValue = {
   locale: Locale
-  setLocale: (locale: Locale) => void
   t: Content
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null)
 
-function readStoredLocale(): Locale | null {
-  if (typeof window === 'undefined') return null
-  const stored = window.localStorage.getItem(STORAGE_KEY)
-  return stored && (LOCALES as string[]).includes(stored) ? (stored as Locale) : null
+/** Detects the locale from a URL path: anything under an `/en/` segment is English. */
+export function localeFromPath(pathname: string): Locale {
+  return /(^|\/)en(\/|\/index\.html)?$/.test(pathname) ? 'en' : 'fi'
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>(() => readStoredLocale() ?? 'en')
+/**
+ * Relative href from the current locale's page to another locale's page.
+ * Relative so it works both on steellabs.io and on the github.io subpath.
+ */
+export function localeHref(from: Locale, to: Locale): string {
+  if (from === to) return './'
+  return to === 'en' ? './en/' : '../'
+}
 
-  const setLocale = (next: Locale) => {
-    setLocaleState(next)
-    window.localStorage.setItem(STORAGE_KEY, next)
-  }
-
-  useEffect(() => {
-    document.documentElement.lang = locale
-    const t = content[locale]
-    document.title = t.meta.title
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute('content', t.meta.description)
-  }, [locale])
-
-  const value = useMemo<LanguageContextValue>(
-    () => ({ locale, setLocale, t: content[locale] }),
-    [locale],
-  )
+export function LanguageProvider({ locale, children }: { locale: Locale; children: ReactNode }) {
+  const value = useMemo<LanguageContextValue>(() => ({ locale, t: content[locale] }), [locale])
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
 }

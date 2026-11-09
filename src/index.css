@@ -188,7 +188,7 @@ a {
   gap: 0.35rem;
 }
 
-.lang-switcher button {
+.lang-switcher a {
   background: none;
   border: none;
   padding: 0.2rem 0.1rem;
@@ -200,11 +200,11 @@ a {
   transition: color 0.2s ease;
 }
 
-.lang-switcher button:hover {
+.lang-switcher a:hover {
   color: var(--cyan);
 }
 
-.lang-switcher button.lang-switcher-active {
+.lang-switcher a.lang-switcher-active {
   color: var(--cyan);
   font-weight: 600;
 }

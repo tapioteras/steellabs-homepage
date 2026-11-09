@@ -68,9 +68,9 @@ export type Content = {
 export const content: Record<Locale, Content> = {
   en: {
     meta: {
-      title: 'Steel Labs',
+      title: 'Steel Labs – AI Consulting, AI Adoption & Software Engineering',
       description:
-        'Steel Labs — AI adoption, dev team leadership, and value-driven software engineering.',
+        'Steel Labs helps organizations adopt AI step by step: AI coaching, AI bots in production, dev team leadership and hands-on software engineering.',
     },
     nav: {
       links: [
@@ -158,9 +158,9 @@ export const content: Record<Locale, Content> = {
   },
   fi: {
     meta: {
-      title: 'Steel Labs',
+      title: 'Steel Labs – Tekoälykonsultointi, AI-sparraus ja ohjelmistokehitys',
       description:
-        'Steel Labs — AI-jalkautus, devtiimien johtaminen ja arvoa tuottava ohjelmistokehitys.',
+        'Steel Labs auttaa yrityksiä ottamaan tekoälyn käyttöön vaihe vaiheelta: AI-sparrausta, AI-botit tuotantoon, devtiimien johtamista ja ohjelmistokehitystä.',
     },
     nav: {
       links: [

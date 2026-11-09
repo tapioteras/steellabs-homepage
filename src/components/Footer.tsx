@@ -26,7 +26,8 @@ export default function Footer() {
         </div>
         <div className="footer-meta">
           <p>{t.footer.tagline}</p>
-          <p className="footer-copyright">
+          {/* the year is baked in at build time; the browser may disagree after New Year */}
+          <p className="footer-copyright" suppressHydrationWarning>
             © {year} {t.footer.copyrightSuffix}
           </p>
         </div>

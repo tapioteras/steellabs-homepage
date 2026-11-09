@@ -11,6 +11,13 @@ npm run dev
 
 Avaa selaimessa osoite, jonka `npm run dev` tulostaa (oletuksena http://localhost:5173).
 
+## Kielet ja hakukonenäkyvyys
+
+- Suomi on juuressa (`/`), englanti polussa `/en/`. Kieli päätellään osoitteesta, ja kielivalitsin on tavallinen linkki.
+- `npm run build` esirenderöi kummankin kielen valmiiksi HTML:ksi (`scripts/prerender.mjs` + `src/entry-server.tsx`), joten hakukoneet ja linkkiesikatselut näkevät koko sisällön ilman JavaScriptiä.
+- Otsikot, kuvaukset, canonical, hreflang, Open Graph ja JSON-LD syntyvät `src/i18n/content.ts`:n sisällöstä (`head()` tiedostossa `src/entry-server.tsx`). Build kirjoittaa myös `sitemap.xml`:n.
+- Jakokuvat ovat `public/og-fi.png` ja `public/og-en.png` (1200×630).
+
 ## Tuotantoversion kääntäminen
 
 ```bash
