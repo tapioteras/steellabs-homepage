@@ -1,5 +1,8 @@
 export type Locale = 'en' | 'fi'
 
+/** Finnish Business ID (Y-tunnus) of Steel Labs */
+export const BUSINESS_ID = '3189290-2'
+
 export const LOCALES: Locale[] = ['en', 'fi']
 
 export const LOCALE_LABELS: Record<Locale, string> = {
@@ -69,6 +72,7 @@ export type Content = {
     linkedinLabel: string
     tagline: string
     copyrightSuffix: string
+    businessIdLabel: string
   }
 }
 
@@ -161,6 +165,7 @@ export const content: Record<Locale, Content> = {
       tagline:
         'Steel Labs — AI adoption, dev team leadership, and value-driven software engineering.',
       copyrightSuffix: 'Steel Labs. All rights reserved.',
+      businessIdLabel: 'Business ID',
     },
     consent: {
       title: 'Cookies',
@@ -257,6 +262,7 @@ export const content: Record<Locale, Content> = {
       linkedinLabel: 'LinkedIn ↗',
       tagline: 'Steel Labs — AI-jalkautus, devtiimien johtaminen ja arvoa tuottava ohjelmistokehitys.',
       copyrightSuffix: 'Steel Labs. Kaikki oikeudet pidätetään.',
+      businessIdLabel: 'Y-tunnus',
     },
     consent: {
       title: 'Evästeet',

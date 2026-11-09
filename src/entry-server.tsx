@@ -3,7 +3,7 @@
 import { StrictMode } from 'react'
 import { renderToString } from 'react-dom/server'
 import App from './App'
-import { content, LOCALES, type Locale } from './i18n/content'
+import { BUSINESS_ID, content, LOCALES, type Locale } from './i18n/content'
 
 export function render(locale: Locale): string {
   return renderToString(
@@ -46,6 +46,11 @@ function structuredData(locale: Locale): string {
         url: pageUrl(DEFAULT_LOCALE),
         image: `${SITE_URL}/og-${locale}.png`,
         email: 'info@steellabs.io',
+        identifier: {
+          '@type': 'PropertyValue',
+          propertyID: 'Y-tunnus (Finnish Business ID)',
+          value: BUSINESS_ID,
+        },
         description: t.meta.description,
         areaServed: { '@type': 'Country', name: 'Finland' },
         sameAs: [LINKEDIN_URL],

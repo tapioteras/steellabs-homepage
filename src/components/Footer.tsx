@@ -1,5 +1,6 @@
 import { useLanguage } from '../i18n/LanguageContext'
 import { OPEN_CONSENT_EVENT } from '../analytics'
+import { BUSINESS_ID } from '../i18n/content'
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -36,7 +37,7 @@ export default function Footer() {
           </button>
           {/* the year is baked in at build time; the browser may disagree after New Year */}
           <p className="footer-copyright" suppressHydrationWarning>
-            © {year} {t.footer.copyrightSuffix}
+            © {year} {t.footer.copyrightSuffix} · {t.footer.businessIdLabel} {BUSINESS_ID}
           </p>
         </div>
       </div>
