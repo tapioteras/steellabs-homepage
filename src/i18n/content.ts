@@ -56,6 +56,13 @@ export type Content = {
     linkLabel: string
     items: ProjectItem[]
   }
+  consent: {
+    title: string
+    text: string
+    accept: string
+    decline: string
+    settings: string
+  }
   footer: {
     eyebrow: string
     heading: string
@@ -155,6 +162,13 @@ export const content: Record<Locale, Content> = {
         'Steel Labs — AI adoption, dev team leadership, and value-driven software engineering.',
       copyrightSuffix: 'Steel Labs. All rights reserved.',
     },
+    consent: {
+      title: 'Cookies',
+      text: 'We use Google Analytics to see how the site is used. Analytics cookies are only set if you accept them.',
+      accept: 'Accept',
+      decline: 'Decline',
+      settings: 'Cookie settings',
+    },
   },
   fi: {
     meta: {
@@ -243,6 +257,13 @@ export const content: Record<Locale, Content> = {
       linkedinLabel: 'LinkedIn ↗',
       tagline: 'Steel Labs — AI-jalkautus, devtiimien johtaminen ja arvoa tuottava ohjelmistokehitys.',
       copyrightSuffix: 'Steel Labs. Kaikki oikeudet pidätetään.',
+    },
+    consent: {
+      title: 'Evästeet',
+      text: 'Käytämme Google Analyticsia nähdäksemme, miten sivustoa käytetään. Analytiikkaevästeet otetaan käyttöön vain, jos hyväksyt ne.',
+      accept: 'Hyväksy',
+      decline: 'Hylkää',
+      settings: 'Evästeasetukset',
     },
   },
 }

@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext'
+import { OPEN_CONSENT_EVENT } from '../analytics'
 
 export default function Footer() {
   const { t } = useLanguage()
@@ -26,6 +27,13 @@ export default function Footer() {
         </div>
         <div className="footer-meta">
           <p>{t.footer.tagline}</p>
+          <button
+            type="button"
+            className="footer-consent"
+            onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))}
+          >
+            {t.consent.settings}
+          </button>
           {/* the year is baked in at build time; the browser may disagree after New Year */}
           <p className="footer-copyright" suppressHydrationWarning>
             © {year} {t.footer.copyrightSuffix}
